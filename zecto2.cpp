@@ -1,8 +1,9 @@
-// URL : https://codeforces.com/problemset/problem/1225/B1
+// URL : https://codeforces.com/problemset/problem/1225/B2
 
 #include <iostream>
 #include <list>
 #include <set>
+#include <unordered_set>
 #include <algorithm>
 #include <vector>
 #include <cmath>
@@ -80,16 +81,46 @@ signed main()
         // We want to purchase a pack of minimum shows such that, i can watch the tv for d consicutuive days
         // Create an abstraction
         // n k d
-        int min_shows = inf;
-        yo(i,0,n-d+1) {
+        // map is a data strutures that stores {key, value} pairs.
+        // container<dtype> name
+        // map<key_dtype, val_dtype> name;
+        // internal implemenetation is done using -> B and B+ trees.
+        // map supports index [] operators.
+        // map_name[key] gives value.
+        // map.insert({key, value}) -> O(log n)
+        // map.erase(key) -> O(log n)
+        // map.find(key) is eqvivalent to map[key] whose time complexity is O(log n)
+        // map<int, int> m; int maps to its occurance (for this case)
+        // m = {}
+        // m[1] = 1;
+        // m = {1: 1}
+        // m[1]++;
+        // m = {1: 2}
+        // m[2] = 2;
+        // m = {1: 2,
+        //      2: 2};
+        // m[i];
+        // m = {1: 2, 2: 2, i: 0}
+        map<int, int> s;//O(1)
+        int min_shows = inf; // O(1)
+        yo(j,0,d) {  //O(d)
+            // O(log d)
+            if(!s[v[j]]) s[v[j]] = 1; // introduce the element and set the occurance to 1
+            else s[v[j]]++; // increment the occurance
+        }
+        min_shows = min(min_shows, (int)s.size());  //O(1)
+        yo(i,d,n) {   //O(n)
             // Take one step
+            //O(log d)
+            if(!s[v[i]]) s[v[i]] = 1; // if i'th element is bot present, introduce it
+            else s[v[i]]++; // if present, increse its occurance
+            if(s[v[i-d]]==1) s.erase(v[i-d]); // exclude it
+            else s[v[i-d]]--; // i will pretend as if i have excluded it.
             // in this step, insert d elements in the set.
-            set<int> s;
-            yo(j,i,i+d) {
-                s.insert(v[j]);
-            }
             min_shows = min(min_shows, (int)s.size());
         }
+        // reslut : O(d*log d + n*log d)
+        // result : O(n*log d)
         cout << min_shows << "\n";
     }
 }
