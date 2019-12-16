@@ -1,6 +1,7 @@
-//  URL : https://codeforces.com/problemset/problem/1245/B
-//  Problem tags : constructive algorithms    dp    greedy    *1200
+//  URL : https://codeforces.com/problemset/problem/1272/A
+//  Problem tags : brute force    greedy    math    sortings    *900
 //  Date : 16/12/2019
+
 
 
 // Importing Streams
@@ -13,7 +14,7 @@
 // Importing Data Structures
 #include <list>
 #include <set>
-#include <unordered_set>
+//#include <unordered_set>       creating error if not commented..!!
 #include <vector>
 #include <string>
 #include <map>
@@ -34,7 +35,7 @@
 // Dangerous Import!
 // #include <bits/stdc++.h>
 
-#define IO_PREPROCESSOR ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+#define IO_PREPROCESSOR ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
 #define int long long
 #define INF LLONG_MAX
@@ -61,37 +62,21 @@ signed main()
     IO_PREPROCESSOR
     FOR_EACH_TESTCASE
     {
-        int n, count=0;
-        sn(n);
         int a,b,c;
-        sn(a)sn(b)sn(c)
-        string s;
-        sn(s)
-        map<char, char> m;
-        vector<char> v;
-        m['R'] = 'P';
-        m['P'] = 'S';
-        m['S'] = 'R';
-        yo(i,0,n) {
-            if(a>0 && m[s[i]]=='R'){count++;a--;v.pb(m[s[i]]);}
-            else if(b>0 && m[s[i]]=='P'){count++;b--;v.pb(m[s[i]]);}
-            else if(c>0 && m[s[i]]=='S'){count++;c--;v.pb(m[s[i]]);}
-            else {
-                v.pb('?');
-            }
-        }
-        if(count<n/2 + n%2) cout << "NO\n";
-        else {
-            cout << "YES\n";
-            for(auto x:v){
-                if(x=='?'){
-                    if(a>0){cout << 'R';a--;}
-                    else if(b>0){cout << 'P';b--;}
-                    else{cout << 'S';c--;}
-                }
-                else cout << x;
-            }
-            cout << "\n";
-        }
+        cin >> a >> b >> c;
+        int  x = max(max(a,b),c);
+        int z = min(min(a,b),c);
+        int y = (a+b+c)-(x+z);
+
+        if(a==b && a==c) { cout << 0 << endl; continue;}
+        if(z!=y) z++;
+        else {z++; y++;}
+        if(x==y && x==z) { cout << 0 << endl; continue;}
+        if(x!=y) x--; 
+        else {x--; y--;}
+
+        cout << (x-y)+(x-z)+(y-z) << endl;
+        
     }
+
 }

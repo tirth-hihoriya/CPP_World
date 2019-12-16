@@ -1,5 +1,6 @@
-// URL : https://codeforces.com/problemset/problem/1225/B2
-// Date : 15/12/2019
+//  URL : https://codeforces.com/problemset/problem/1225/B2
+//  Problem tags :  implementation    two pointers    *1300
+//  Date : 15/12/2019
 
 #include <iostream>
 #include <list>

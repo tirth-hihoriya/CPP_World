@@ -1,5 +1,6 @@
-// URL : https://codeforces.com/problemset/problem/1225/B1
-// Date : 15/12/2019
+//  URL : https://codeforces.com/problemset/problem/1225/B1
+//  Problem tags :  implementation    *1000
+//  Date : 15/12/2019
 
 #include <iostream>
 #include <list>
