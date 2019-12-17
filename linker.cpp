@@ -2,10 +2,8 @@
 #include "log.h"
 
 
-
 int main()
 {
-    initlog();
-    Log("Tirth Hihoriya");
+    log("Tirth Hihoriya");
 
 }

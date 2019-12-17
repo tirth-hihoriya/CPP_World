@@ -1,8 +1,6 @@
-//  URL : https://codeforces.com/problemset/problem/1272/A
-//  Problem tags : brute force    greedy    math    sortings    *900
-//  Date : 16/12/2019
-
-
+//  URL : https://codeforces.com/group/t5l3p8XLes/contest/263221/problem/A
+//  Problem tags :   NONE
+//  Date : 17/12/2019
 
 // Importing Streams
 #include <iostream>
@@ -14,7 +12,7 @@
 // Importing Data Structures
 #include <list>
 #include <set>
-#include <unordered_set>       //creating error if not commented..!!
+#include <unordered_set>
 #include <vector>
 #include <string>
 #include <map>
@@ -35,7 +33,7 @@
 // Dangerous Import!
 // #include <bits/stdc++.h>
 
-#define IO_PREPROCESSOR ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define IO_PREPROCESSOR ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
 #define MOD 1000000007
 #define int long long
 #define INF LLONG_MAX
@@ -54,29 +52,27 @@
 #define pb push_back
 #define pf push_front
 #define FOR_EACH_TESTCASE int t;sn(t);while(t--)
+#define TESTCASES 1
 
 using namespace std;
+
+
+
 
 signed main()
 {
     IO_PREPROCESSOR
-    FOR_EACH_TESTCASE
+    int n,b=0,c=0;
+    sn(n)
+    for(int i=0;i<n;i++)
     {
-        int a,b,c;
-        cin >> a >> b >> c;
-        int  x = max(max(a,b),c);
-        int z = min(min(a,b),c);
-        int y = (a+b+c)-(x+z);
+        int x;
+        cin >> x;
+        if(x<0) c+=x;
+        else b+=x;
 
-        if(a==b && a==c) { cout << 0 << endl; continue;}
-        if(z!=y) z++;
-        else {z++; y++;}
-        if(x==y && x==z) { cout << 0 << endl; continue;}
-        if(x!=y) x--; 
-        else {x--; y--;}
-
-        cout << (x-y)+(x-z)+(y-z) << endl;
-        
     }
+    cout << (b-c) << endl;
 
 }
+
