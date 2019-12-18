@@ -1,5 +1,5 @@
-//  URL : https://codeforces.com/contest/1281/problem/C
-//  Problem tags :   implementation    math    *1700
+//  URL : https://codeforces.com/contest/1230/problem/B
+//  Problem tags :   greedy    implementation  *1000  
 //  Date : 17/12/2019
 
 // Importing Streams
@@ -56,38 +56,31 @@
 
 using namespace std;
 
+
+
+set<int> s;
 signed main()
 {
     IO_PREPROCESSOR
-    #ifdef TESTCASES
-        FOR_EACH_TESTCASE
-        {
-            int x;
-            string s;
-            int l=0,len,count;
-            cin>>x>>s;
-            len=s.length();
-            string right;
-            while(l < x)
-            {
-                l++;
-                int c=s[l-1]-'0';
-               
-                if(c==1)
-                    continue;
-                if(s.length() < x)
-                    right=s.substr(l,s.length()-l);
-                count=(len-l+MOD)%MOD;
-                c--;
-                while(c--)
-                {
-                    if(s.length() < x)
-                        s+=right;
-                    len=(len+count)%MOD;
-                }
-            }
-            cout<<len<<endl;
-        }
-
-    #endif
+    int n,k;
+    string s;
+    sn(n)sn(k)sn(s)
+    if(n == 1 && k == 1){
+         s = "0";
+    }
+    else {  
+    if(s[0] != '1' && k!=0){
+        s[0] = '1';
+        k--;
+    }
+    for (int i = 1; i < n; i++) {
+        if(s[i] != '0' && k!=0){
+        s[i]= '0';
+        k--;  
+    }
+    
+    }
 }
+cout << s << endl;
+}
+
