@@ -1,0 +1,361 @@
+* HEAP AND HEAP ALGORITHMS : 
+
+What is heap ? 
+
+					9     <--- Head (first row)
+				      /   \
+                                     /     \
+                                    /       \
+				   8         6     <--- Second Row
+				  / \       / \
+                                 7   4     5   2   <--- Third row    
+                                /\   /\                    .
+                               1  2 3  0   ...             .
+                               ...  ...                    .
+
+Heap is a tree with parent node greater than all the child nodes. We can represent the tree as a vector like this:
+
+                            9          8 6         7 4 5 2        1 2 3 0              ...
+                            ^          ^-^         ^-----^        ^-----^              ^-----
+                          head        second        third         fourth                n'th
+                                       row           row           row                  row
+
+Hence our vector becomes --->  9 8 6 7 4 5 2 1 2 3 0 ...
+
+Suppose we have a random array of numbers : 0 8 7 4 2 6 3 2 1 9 5
+
+----------------------------------------------------------------------------------------------------
+
+We can use STL Algorithm -> std::make_heap(begin, end) <- to rearrange the array to make a heap.
+Time Complexity of std::make_heap -> O(n)
+
+----------------------------------------------------------------------------------------------------
+
+Now, if you add a element to the heap, following steps take place : 
+
+					1.) New node is compared to the smallest node.
+                                        2.) If the new node is greater than the parent node, it gets swaped with the parent node.
+					3.) Step no 2 repeats until the condition fails.
+					4.) When  the condition fails means that we got the correct position of the new node.
+
+------------------------------------------------------------------------------------
+
+STL Algorithm for adding a element to the heap -> std::push_heap(begin, end).
+Time Complexity of std::push_heap : O(log n)
+
+------------------------------------------------------------------------------------
+
+We use heap to get the maximum element of a vector in constant time. As the parent node is always
+larger than its children, the head is the largest element of the heap which is always the first element of the 
+array so we could access it in constant time.
+
+--------------------------------------------------------------------------------------------------
+
+The STL Algorithm -> std::pop_heap(begin, end) <- swaps the last element with the first element
+and the first element is again transversed through the array in order to remake the heap.
+Hence the last element which is maximum can be removed completely from the heap by 
+using  -> std::pop_back().
+
+--------------------------------------------------------------------------------------------------
+
+Tip and a Trick : Instead of removing last element, just apply -> std::pop_head <- function to the 
+remaining array. Continue doing it until you encounter the first elelment. The array is now
+sorted. So, we could sort arrays using heap.
+
+There is a STL Algorithm that does it for us. It is -> std::sort_heap(begin, end).
+
+---------------------------------------------------------------------------------------------------
+
+* SORTING ALGORITHMS : 
+
+To sort with STL, we have the folowing algorithms : 
+
+1.) std::sort(begin, end)                        -> Rearrenges elements to be in the sorted order.
+2.) std::partial_sort(begin,middle, end)         -> sorts the elements specified in the array and puts the sorted
+				     	            elements in the front of the array. remaining elements remain
+				            	    in unspecified order.
+3.) std::nth_element(begin, n'th element, end)   -> Puts the n'th element of array in the index which it 
+						    would land in, if it were to be sorted. Meaning, the 
+						    elements to left of it are smaller than that element
+						    and to the right of it are greater than that element.
+4.) std::sort_heap(begin, end)                   -> We talked about it above.
+5.) std::inplace_merge(begin, end)               -> Merges two sorted arrays in a single sorted array.
+
+Some other sorting algoritms : 
+
+6.) std::insertion_sort(begin, end)
+7.) std::bubble_sort(begin, end)
+8.) std::stable_sort(begin, end)   <-- Uses three way hybrid quicksort algorithm. 250% ro 1000% faster than C qsort()
+
+
+--------------------------------------------------------------------------------------------------
+			
+
+*PARTITIONING : 
+
+It's just arraring elements of a vector to sort out elements of the same type or value together.
+
+Say, we have vector -> 0 1 1 1 0 0 1 0 0 0 0 0 0 1 1 0
+
+Partition does this -> 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+                                           ^
+                                     it is known as 
+                                     partition point
+
+STL Algorithm to partition -> std::partition(begin, end, predicate) <- It sorts the vector in the above manner
+								       and returns a iterator pointing to the 
+									    element at partition point. 
+
+Also -> std::stable_partition(begin, end, predicate) <- The relative order of each group is preserved.
+
+
+-----------------------------------------------------------------------------------------------------
+
+*OTHER PERMUTATIONS :
+
+1.) std::rotate(begin, end) <- does as the name suggests.
+2.) std::shuffle(begin, end) -> Arranges the vector in random manner.
+3.) std::next_permutation(begin, end) -> The most useful algorithm. It is explained below.
+
+std::next_permutation -> give a array of elements which is occuring just after the array in a dictionary.
+
+Example: Suppose your array is -> 1 2 3 4.
+Then next_permutation would return -> 1 2 4 3 -> which occurs after the above array in dictionary.
+
+Example 2 : Suppose you have a string ->  "abcd".
+Hence, next_permutation would return  ->  "abdc" whilch is occuring after the above string in an array.
+
+
+4.) std::prev_permutation(begin, end) ->  Does as the name suggests.
+
+
+-----------------------------------------------------------------------------------------------------
+
+* SECRET RUNES : 
+
+1.) stable_* -> Applies the algorithm bet doesn't change the order of elements.
+		Example: stable_sort, stable_partition.
+2.) is_*     -> Predicate to check if the array of elements is permuted according to the algorithm.
+		Example : is_sorted, is_partitioned, is_heap, is_permutation.
+3.) is_*_until -> Returns a iterator pointing to the last element from begining that is sorted according
+		  to the algorithm.
+		  Example : is_sorted_until, is_partitioned_until, is_heap_until, etc.
+
+-----------------------------------------------------------------------------------------------------
+
+*NUMERIC ALGORITHMS : 
+
+1.) std::count, std::count_if  (begin, end) <- Does as the name suggests. 
+2.) std::accumulate (begin, end, function=operator+)  <- Returns the sum of array of elements
+							 according to the function provided.
+							 Default function is operator +.
+3.) std::partial_sum (begin, end, back_inserter())  -> returns a vector having the following format.
+					First element -> first element of input array.
+					Second element -> addition of first and second elements.
+					Third element -> 1'st + 2'nd + 3'rd 
+                                             ...
+4.) std::inclusive_scan / std::exclusive_scan / transform_inclusive_scan / transform_exclusive_scan -> Does same as partial sum.
+
+5.) std::inner_product (begin1, end1, begin2, init)  -> Takes the iterators of first array, second array and adds the 
+							product of the pairs to the init value.
+
+6.) std::adjecent_difference(begin, end, back_inserter()) -> Does as the name suggests.
+
+7.) std::sample(begin, end, back_inserter(), n, source=rand) -> Chooses n elements from begin to end randomly(or according to source)
+							and pushes them to another array.
+
+*Note : Only Visual Studio 2017 supports all the algorithms mentioned here.*
+
+
+------------------------------------------------------------------------------------------------------
+
+*QUERYING A PROPERTY :
+
+
+1.) all_of (begin, end, pred)  -> returns true if all of the elements satisfy the predicate.(returns true for empty arrays)
+
+2.) any_of (begin, end, pred)  -> returns true if at least one of the elements satisfy the predicate. (returns false for empty)
+
+3.) none_of (begin, end, pred) -> returns true if none of the elements satisfy the predicate.(returns true for empty arrays)
+
+
+------------------------------------------------------------------------------------------------------
+
+* QUERYING PROPERTY ON TWO RANGES : 
+
+1.) == operator -> bruh.
+
+2.) std::is_permutation -> explained above.
+
+3.) std::lexographical_compare -> returns true if comparison in valid.
+
+4.) std::mismatch -> returns a pair of iterators (pair<iter, iter>) pointing towards the first 
+			elements of each array from which they differ.
+
+
+------------------------------------------------------------------------------------------------------
+
+* SEARCHING ALGORITHMS :
+
+
+1.) std::equal_range (beign, end, value) -> returns a pair of iterators(pair<itr, iter>) that contains 
+						all elements equivalent to value.
+
+2.) std::lower_bound(begin, end, value)  -> returns iterator to first occurence of value in sorted array.
+
+3.) std::upper_bound(begin, end, value)  -> opposite to lower_bound.
+
+4.) std::binary_search(begin, end, value) -> returns true if element is found.
+
+5.) std::search (begin, end, subrange)  -> finds the occurence of subrange in a range.
+
+6.) std::find_end (begin, end, subrange) -> finds the subrange from the end of array.
+
+7.) std::find_first_of (begin, end, subrange) -> finds the first occurence of subrange.
+
+8.) std::max_element / std::min_element  (begin, end) -> searches the maximum and minimum values in an array.
+
+9.) std::minmax_element (begin, end) -> finds minimum and maximum and then returns a pair.
+
+
+------------------------------------------------------------------------------------------------------
+
+* SET AND SET ALGORITHMS : 
+
+We know what set is from mathematics. Set contain elements of a type that are *Not Repeated*.
+
+Even a sorted vector, list, set, tuple, map, multimap, set, forward_list and all the containers
+satisfing the conditions of forward iterators are considered as set in c++.
+
+Conditions for being a set : 1.) no element should be repeated.
+			     2.) Elements must be sorted.
+
+Below are the algorithms on sets :
+
+1.) std::set_difference (begin1, end1, begn2, end2) -> Returns a set of elements that are in 
+						       1'st set but not in second. (A-B)
+
+2.) std::set_union / std::set_inrtersection (begin1, end1, begin2, end2) -> As the name suggests.
+
+3.) std::set_symmetric_difference  ->  ~(A U B).
+
+4.) std::includes (begin1, end1, begin2, end2) -> returns true if B is a subset of A.
+
+5.) std::merge (begin1, end1, begin2, end2) -> merges two sets.
+
+*Note : All of the algorithms on set only work if the set is sorted.*
+
+
+----------------------------------------------------------------------------------------------------
+
+* MOVE ALGORITHMS : 
+
+1.) std::copy / std::move (begin, end, back_inserter()) -> copies elements from one array to another.
+							   move removes the element from the first array too.
+
+2.) std::copy_backwards / std::move_backwards (begin, end, back_inserter()) -> Does as the name suggests.
+
+
+----------------------------------------------------------------------------------------------------
+
+* VALUE MODIFIERS : 
+
+1.) std::fill (begin , end , value)  	  -> Assigns the value to all the space from begin to end.
+
+2.) std::generate (begin, end, function)  -> Executes the function, once for each element, and assigns the 
+						returned value to the array.
+
+3.) std::iota (begin, end, value)         -> Assigns the value to first element, increments and assigns to next element and so on.
+					     Eg : say value=42 => 1'st = 42, 2'nd = 43, 3'rd = 44, 4'th = 45, and so on.
+
+4.) std::replace (begin, end, value1, value2) -> replaces every occurence of value1 with value2.
+
+
+---------------------------------------------------------------------------------------------------
+
+* STRUCTURE CHANGES : 
+
+
+1.) std::remove (begin, end, value) -> Removes the value from begin to end and collects empty space 
+					left at the end returning iterator pointing at the first empty space.
+
+2.) std::remove_copy (begin, end, back_inserter(), value)  -> Copies everything to the new array
+								except value.
+
+3.) std::remove_if / std::remove_copy_if (begin, end, predicate, value)  -> Takes a predicate instead.
+
+
+---------------------------------------------------------------------------------------------------
+
+
+*  *_COPY and *_IF: 
+
+
+1.) std::*_copy -> Takes a output iterator as an extra argument.
+
+			Example : remove_copy, replace_copy, sort_copy, next_permutaion_copy, etc...
+
+2.) std::*_if -> Takes a predicate as an extra argument.
+
+			Example : remove_if, replace_if, transform_if, rotate_if, etc...
+
+---------------------------------------------------------------------------------------------------
+
+
+* LONELY ISLAND : 
+
+1.) std::transform (begin, end, back_inserter(), function) -> Takes a array, executes the function for each element
+ 								and stores the result in a new array.
+
+2.) std::for_each (begin, end, function)  ->  Executes the function for each element but doesn't care of result.
+
+
+---------------------------------------------------------------------------------------------------
+
+* RAW MEMORY : 
+
+Copy, fill , and move use assignment operator meaning that a object is "initialized" during their execution.
+If you dont have = operator assigned to your costum class then you can use any of the follying algorithms 
+to get your job done : 
+
+uninitialized_*  (begin ,end, value) ->  Calls the constructor instead of using = operator. 
+
+Example : std::uninitialized_copy , std::uninitialized_move , std::uninitialized_fill.
+
+std::destroy (begin, end)  -> frees the memory from begin to end. 
+
+
+--------------------------------------------------------------------------------------------------
+
+* *_N : 
+
+Instead of taking two iterators, begin and end resp., it takes a iterator and a size. 
+For example : fill_n ( v.begin() ,    5   ,     42   )
+                          ^           ^         ^
+                      iterator       size      value
+
+Above piece of code fills the first five space with 42.
+
+
+--------------------------------------------------------------------------------------------------
+
+
+
+CONGRATULATIONS ! YOU HAVE TAKEN A ENTIRE WORLD TOUR ON PLANET ALGORITHMS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

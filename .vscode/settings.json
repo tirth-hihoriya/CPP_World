@@ -3,7 +3,9 @@
         "iostream": "cpp",
         "climits": "cpp",
         "iosfwd": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "random": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

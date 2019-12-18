@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/contest/1230/problem/B
-//  Problem tags :   greedy    implementation  *1000  
-//  Date : 17/12/2019
+//  URL : https://codeforces.com/contest/1281/problem/B
+//  Problem tags :   greedy  *1500  
+//  Date : 18/12/2019
 
 // Importing Streams
 #include <iostream>
@@ -56,31 +56,48 @@
 
 using namespace std;
 
-
-
-set<int> s;
 signed main()
 {
     IO_PREPROCESSOR
-    int n,k;
-    string s;
-    sn(n)sn(k)sn(s)
-    if(n == 1 && k == 1){
-         s = "0";
+    FOR_EACH_TESTCASE{
+            string l,r;
+            sn(l)sn(r)
+            int len = l.length();
+            int i=0,x=0;
+            if(l<r){
+                 cout << l << endl;
+                 continue;
+                }
+            else{
+                for (int i = 0; i < len && x==0; i++) {
+                    for (int j = i+1; j < len && x==0; j++) {
+                        if(l[j] < l[i]){
+                            char temp = l[j];
+                            l[j] = l[i];
+                            l[i] = temp;
+                            if (l<r) {
+                                cout << l << endl;
+                                x=1;
+                            }
+                        else{
+                            char temp = l[j];
+                            l[j] = l[i];
+                            l[i] = temp;
+                        }
+                        }
+                    }
+                }
+                if(x==0)
+                cout << "---" << endl;
+            }
+            
+
     }
-    else {  
-    if(s[0] != '1' && k!=0){
-        s[0] = '1';
-        k--;
-    }
-    for (int i = 1; i < n; i++) {
-        if(s[i] != '0' && k!=0){
-        s[i]= '0';
-        k--;  
-    }
+ 
+
     
-    }
-}
-cout << s << endl;
+
+
+
 }
 

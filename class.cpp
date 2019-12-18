@@ -2,28 +2,45 @@
 
 using namespace std;
 
-class Player
+class Log
 {
     public:
-    int x,y;
-    int speed=10;
-
-    int move(int xa,int ya)
-    {
-        x += xa * speed;
-        y += ya * speed;
-    }
+        const int LogLevelError = 0;
+        const int LogLevelWarning = 1;
+        const int LogLevelInfo = 2;
+    private:
+        int m_Loglevel = LogLevelInfo;      // `m_` is a convention for private class member variables
+    public:
+        void Setlevel(int level)
+        {
+                m_Loglevel = level;
+        } 
+        void Warn(const char* message)
+        {
+            if(m_Loglevel >= LogLevelWarning)
+            cout << "[Warning] : " <<  message << endl;
+        }
+        void Error(const char* message)
+        {
+            if(m_Loglevel >= LogLevelError)
+            cout << "[Error] : " <<  message << endl;
+        }
+        void Info(const char* message)
+        {
+            if(m_Loglevel >= LogLevelInfo)
+            cout << "[Info] : " <<  message << endl;
+        }
+    
 
 };
 
 int main()
 {
-    Player player;
-    player.x = 5;
-    player.y = 10;
-    player.move(2,3);
-
-    cout << player.x << "  "  << player.y << endl;
+    Log log;
+    log.Setlevel(log.LogLevelInfo);
+    log.Warn("Its a warning...!!!"); 
+    log.Error("Its an Error...!!!");
+    log.Info("Its an Info ...!!");
 
 
 }
