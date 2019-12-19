@@ -31,7 +31,8 @@
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
 #define INT_SIZE sizeof(long long) * 8
-#define for(i, a, b) for(int i=a;i<b;i++)
+#define ifo(i, a, b) for(int i=a;i<b;i++)
+#define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
 #define pwel(n) cout << n << endl;

@@ -1,3 +1,7 @@
+//  URL : https://codeforces.com/group/t5l3p8XLes/contest/260411/problem/C
+//  Problem tags : NONE
+//  Date : 19/12/2019
+
 
 #include <iostream>
 #include <fstream>
@@ -28,7 +32,6 @@
 #define NINF LLONG_MIN
 #define INT_SIZE sizeof(long long) * 8
 #define ifo(i, a, b) for(int i=a;i<b;i++)
-#define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
 #define pwel(n) cout << n << endl;
@@ -50,9 +53,27 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
-    {
+    int n,m;
+    sn(n)sn(m)
+    vi2d v v2d(n,m)
 
+    ifo(i,0,n)
+    {
+        ifo(j,0,m)
+        {
+            char x;
+            sn(x)
+            v[i][j] = x;
+            if(i%2==0 && j%2==0 && x=='.') v[i][j] = 'B';
+            if(i%2==1 && j%2==1 && x=='.') v[i][j] = 'B';
+            if(i%2==0 && j%2==1 && x=='.') v[i][j] = 'W';
+            if(i%2==1 && j%2==0 && x=='.') v[i][j] = 'W';
+            cout << (char)v[i][j];
+            
+        
+        }
+        cout << endl;
     }
 
 }
+
