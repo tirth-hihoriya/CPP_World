@@ -1,3 +1,7 @@
+//  URL : https://codeforces.com/contest/1277/problem/B
+//  Problem tags : greedy    number theory    *1200
+//  Date : 20/12/2019
+
 
 #include <iostream>
 #include <fstream>
@@ -10,7 +14,7 @@
 #include <map>
 #include <stack>
 #include <queue>
-
+#include <windows.h>
 #include <stdexcept>
 #include <cstddef>
 #include <cstdio>
@@ -52,8 +56,47 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int n,moves =0;
+        bool flag = true;
+        sn(n)
+        vi v(n);
+        fo(i,0,n)
+        {
+            int x;
+            sn(x)
+            v.pb(x);
+        }
+        while(flag)
+        {
+            flag = false;
+            fo(i,0,n)
+            {
+                int _max = NINF;
+    
+                    fo(q,0,n)
+                    if(v[q]%2==0)
+                        {
+                            flag = true;
+                            if(v[q]<_max)
+                             _max=v[q];
+                        }
 
+                    fo(k,0,n)
+                    {
+                        if(_max<0)
+                        if(v[k]==_max)
+                            v[k]/=2;
+                    }
+                    moves++;
+                    cout << moves << endl;
+                    Sleep(1000);
+                    
+                
+            }
+        }
+        pwel(moves)
 
     }
 
 }
+
