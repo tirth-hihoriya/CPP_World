@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/contest/1277/problem/B
-//  Problem tags : greedy    number theory    *1200
-//  Date : 20/12/2019
+//  URL : https://codeforces.com/group/t5l3p8XLes/contest/263623/problem/B
+//  Problem tags : 
+//  Date :  20/12/2019 
 
 
 #include <iostream>
@@ -25,7 +25,7 @@
 
 // #include <bits/stdc++.h>
 
-#define XLR8 ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+#define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
 #define int long long
 #define INF LLONG_MAX
@@ -42,7 +42,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -54,28 +54,31 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
+    int x=0,y=0,c1=0,c2=0;
+    int n;sn(n);
+    while(n--)
     {
-        si s;
+        int t,a,b;
+        sn(t)sn(a)sn(b)
 
-       int n;
-       sn(n)
-
-       fo(i,0,n)
-       {
-           int x;
-           sn(x)
-
-           while(x%2==0)
-           {
-               s.insert(x);
-               x/=2;
-           }
-
-       }
-       pwel(s.size())
-
+        if(t==1)
+        {
+            x+=a;
+            c1++;
+        }
+        if(t==2)
+        {
+            y+=a;
+            c2++;
+        }
+              
     }
 
-}
+    if(x>=5*c1) pwel("LIVE") 
+    else pwel("DEAD")
 
+    if(y>=5*c2) pwel("LIVE") 
+    else pwel("DEAD")
+    
+
+}

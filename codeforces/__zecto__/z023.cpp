@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/contest/1277/problem/B
-//  Problem tags : greedy    number theory    *1200
-//  Date : 20/12/2019
+//  URL : https://codeforces.com/group/t5l3p8XLes/contest/263623/problem/D
+//  Problem tags : 
+//  Date :  20/12/2019 
 
 
 #include <iostream>
@@ -25,7 +25,7 @@
 
 // #include <bits/stdc++.h>
 
-#define XLR8 ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+#define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
 #define int long long
 #define INF LLONG_MAX
@@ -36,13 +36,13 @@
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
 #define pwel(n) cout << n << endl;
-#define vi vector<int>
-#define vi2d vector<vector<int>>
-#define v2d(n,m) (n,vector<int>(m));       // vi2d v v2d(n,m)
+#define vi vector<long long>
+#define vi2d vector<vector<long long>>
+#define v2d(n,m) (n,vector<long long>(m));       // vi2d v v2d(n,m)
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -54,28 +54,29 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
+    int r;sn(r)
+    vi2d v v2d(r,2);
+    int pre = INF;
+    fo(i,0,r)
     {
-        si s;
+        int a,b;
+        sn(a)sn(b)
+        int x = min(a,b);
+        int y = max(a,b);
 
-       int n;
-       sn(n)
-
-       fo(i,0,n)
-       {
-           int x;
-           sn(x)
-
-           while(x%2==0)
-           {
-               s.insert(x);
-               x/=2;
-           }
-
-       }
-       pwel(s.size())
-
+        if(y <= pre) pre = y;
+        else if(x <= pre) pre = x;
+        else { pwel("NO") return 0; }
+              
     }
 
+    pwel("YES")
+    return 0;
+    
+
+
 }
+
+
+
 
