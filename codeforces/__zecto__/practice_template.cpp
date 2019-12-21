@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/contest/1266/problem/B
+//  Problem tags : constructive algorithms    math    *1000
+//  Date : 21/12/2019
 
 //***********************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ***********************************
 
@@ -57,7 +57,8 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
-
+        
+        
     }
 
 }

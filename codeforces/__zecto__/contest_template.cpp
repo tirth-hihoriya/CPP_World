@@ -33,6 +33,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -55,7 +56,7 @@ signed main()
     FOR_EACH_TESTCASE
     {
 
-
+            pwel(3)
     }
 
 }
