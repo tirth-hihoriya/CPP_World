@@ -65,7 +65,5 @@ signed main()
     if(v[k]!=v[k+1]) pwel(v[k])
     else pwel(-1)
     
-    
-
 }
 
