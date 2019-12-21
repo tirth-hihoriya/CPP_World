@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/contest/1277/problem/B
-//  Problem tags : greedy    number theory    *1200
-//  Date : 20/12/2019
+//  URL : https://codeforces.com/contest/977/problem/A
+//  Problem tags :  implementation    *500
+//  Date : 21/12/2019
 
 
 #include <iostream>
@@ -25,7 +25,7 @@
 
 // #include <bits/stdc++.h>
 
-#define XLR8 ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+#define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
 #define int long long
 #define INF LLONG_MAX
@@ -42,7 +42,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -54,28 +54,14 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
+    int n,k;
+    sn(n)sn(k)
+    while(k--)
     {
-        si s;
-
-       int n;
-       sn(n)
-
-       fo(i,0,n)
-       {
-           int x;
-           sn(x)
-
-           while(x%2==0)
-           {
-               s.insert(x);
-               x/=2;
-           }
-
-       }
-       pwel(s.size() << " <---- output")
-
+        if(n%10!=0) n-=1;
+        else n/=10;
     }
+    pwel(n)
 
 }
 
