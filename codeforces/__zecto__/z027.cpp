@@ -28,6 +28,7 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
+#define _int int
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -51,24 +52,19 @@
 #define TESTCASES 1
 
 using namespace std;
+int v[2000003];_int j;
+int n,k;
 
 signed main()
 {
     XLR8
-    int n,k;
-    sn(n)sn(k)
-    vi v(n);
-    while(n--)
-    {
-        int a;
-        sn(a)
-        v.pb(a);
-
-    }
-    sort(v.begin(),v.end());
-
-    fo(i,0,n)
-        pwel(v[i])
+   
+    sn(n)sn(k) 
+    for(v[0]=1;cin>>v[++j];);
+    sort(v,v+n+1);
+    if(v[k]!=v[k+1]) pwel(v[k])
+    else pwel(-1)
+    
     
 
 }
