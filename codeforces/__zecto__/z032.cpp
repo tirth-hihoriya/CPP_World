@@ -1,10 +1,11 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/contest/1/problem/B
+//  Problem tags :   implementation    math    *1700
+//  Date : 22/12/2019
 
 //***********************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ***********************************
 
 #include <iostream>
+#include <string> 
 #include <fstream>
 #include <algorithm>
 #include <list>
@@ -36,7 +37,6 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
-#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -52,38 +52,73 @@
 #define TESTCASES 1
 
 using namespace std;
-bool isPrime(int num){
-    bool flag=true;
-    for(int i = 2; i <= num / 2; i++) {
-       if(num % i == 0) {
-          flag = false;
-          break;
-       }
-    }
-    return flag;
-}
 
 signed main()
 {
     XLR8
-    int n;
-    sn(n)
-
-    int a=n+3,b=4;
-    do{a++;}while(isPrime(a));
-    while(a-b!=n)
+    FOR_EACH_TESTCASE
     {
-        if(a-b<n)
+        string s;
+        sn(s)
+
+       
+        int a;
+        bool flag = false;
+        fo(i,0,s.length())
         {
-            do{a++;}while(isPrime(a));
+            if(s[i]<'A') { a=i;break;}
+        }
+        fo(i,a+1,s.length())
+        {
+            if(s[i]=='C') flag = true;
+        }
+
+        if(flag)
+        {
+            int pos = s.find("C"); 
+            
+            int r = stoi(s.substr(1,pos-1));
+            int c = stoi(s.substr(pos + 1));
+            
+            string s1;
+            int i=0;
+
+            while(c>0)
+            {
+                int x = c%26;
+
+                if(x==0)
+                {
+                    s1.push_back('Z');
+                    c = (c/26)-1;
+                }
+                else
+                {
+                    s1.push_back('A' + (x-1)) ;
+                    c = c/26;
+                }
+                
+            }
+            reverse(s1.begin(), s1.end()); 
+            pwel(s1 << r)
         }
         else
         {
-            do{b++;}while(isPrime(b));
+            string c = s.substr(0,a);
+            
+            int c1 = 0;
+            fo(i,0,c.length())
+            {
+                c1 *= 26;
+                c1 += c[i] - 'A' + 1;
+            }
+
+            pwel("R" << s.substr(a,s.length()-a) << "C" << c1)
         }
         
-
+        
+        
     }
-    pwel(a << " " << b)
 
 }
+

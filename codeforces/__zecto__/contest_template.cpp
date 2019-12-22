@@ -56,7 +56,7 @@ signed main()
     FOR_EACH_TESTCASE
     {
 
-            pwel(3)
+           
     }
 
 }

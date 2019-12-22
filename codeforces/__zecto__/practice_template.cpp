@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/contest/1266/problem/B
-//  Problem tags : constructive algorithms    math    *1000
-//  Date : 21/12/2019
+//  URL : 
+//  Problem tags : 
+//  Date : 
 
 //***********************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ***********************************
 
