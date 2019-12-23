@@ -1,3 +1,6 @@
+//  URL : https://codeforces.com/group/t5l3p8XLes/contest/263904/problem/A
+//  Problem tags : NONE
+//  Date : 24/12/2019
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
