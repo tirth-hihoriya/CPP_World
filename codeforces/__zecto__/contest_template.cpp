@@ -1,5 +1,5 @@
 
-//***********************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ***********************************
+//******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>
 #include <fstream>
