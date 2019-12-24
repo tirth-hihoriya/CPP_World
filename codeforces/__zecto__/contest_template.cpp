@@ -20,6 +20,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
+#include <windows.h>  // Sleep()
 
 // #include <bits/stdc++.h>
 

@@ -1,6 +1,6 @@
-//  URL : https://codeforces.com/group/t5l3p8XLes/contest/263904/problem/A
-//  Problem tags : NONE
-//  Date : 23/12/2019
+//  URL : https://codeforces.com/contest/1253/problem/C
+//  Problem tags :   dp    greedy    math    sortings    *1500
+//  Date : 24/12/2019
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -23,6 +23,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
+#include <windows.h>
 
 // #include <bits/stdc++.h>
 
@@ -36,7 +37,6 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
-#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -56,28 +56,29 @@ using namespace std;
 signed main()
 {
     XLR8
-    int n,k,sum=0,x=-1,a;
-    sn(n)sn(k)
-
+    int n,m;
+    sn(n)sn(m)
     vi v(n);
-    v[0]=k;
-    fo(i,1,n)
+    fo(i,0,n)
     {
-        v[i]=0;
-        
-      
+        sn(v[i])
     }
-   
-    fo(j,0,n)
-    {int temp=v[0];
-        fo(i,0,n)
-        {
-            cout<<v[i] << " ";
-            
-            if(i==n-1) v[i]=temp;
-            else v[i]=v[i+1];
-        }
-        cout<<'\n';
+
+    sort(v.begin(),v.end());
+    
+    vi dp(n, 0);
+
+    fo(i,0,n) {
+        dp[i] = v[i] + (i >= m ? dp[i - m] : 0);
     }
+ 
+    int ans = 0;
+    fo(i,0,n) {
+        ans += dp[i];
+        cout << ans << ' ';
+    }
+
+    
 
 }
+
