@@ -1,7 +1,6 @@
-//not accepted (time limit excedded)
-//  URL : https://codeforces.com/contest/1282/problem/B2
-//  Problem tags : 
-//  Date : 24/12/2019
+//  URL : https://codeforces.com/problemset/problem/1287/A
+//  Problem tags : greedy    implementation    *800
+//  Date : 13/01/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -38,7 +37,6 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
-#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -60,62 +58,28 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
-       int n,p,k,a=0;
-        sn(n)sn(p)sn(k)
-        vi v(n);
-        fo(i,0,n) sn(v[i])
-        sort(v.begin(),v.end());
-        
-        // for(int i=0;i<n;i+=2)
-        // {
-        //     p1-=v[i];
-        //     if(p1<0) break;
-        //     a++;
-
-        // }
-        // for(int i=1;i<n;i+=2)
-        // {
-        //     p-=v[i];
-        //     if(p<0) break;
-        //     b++;
-
-        // }
-        int mex=NINF,r,p2;
-        for(int x=0;x<k;x++)
+        int n;
+        sn(n)
+        string s;
+        sn(s)
+        int _max=0;
+        int c=NINF;
+        fo(i,0,n)
         {
-            int p1=p;a=0;
-            for(int i=x;i<n;i+=k)
-                {
-                    p1-=v[i];
-                    if(p1<0) break;
-                    a++;
-                    r=i;
-                    p2=p1;
-
-                }
-                
-                if(x!=k-1)
-                {
-                    p2+=v[x];
-                    a=k*(a-1);
-                    fo(y,0,x+1)
-                    {p2-=v[y];
-                    if(p2<0) break;
-                    a++;}
-                }
-                else
-                {
-                    a=k*a-(k-x-1);
-                }
-                
-
-                if(a>mex) mex=a;
+            
+            if(s[i]=='A') 
+            {
+                c=0;
+            }
+            else
+                c++;
+            _max=max(c,_max);
         }
-        // a=2*a-1;
-        // b=2*b;
-        pwel(mex)
 
-           
+    
+        pwel(_max)
+        
     }
 
 }
+
