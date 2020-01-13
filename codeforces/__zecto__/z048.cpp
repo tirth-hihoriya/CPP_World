@@ -1,5 +1,5 @@
-//  URL : 
-//  Problem tags : 
+//  URL : https://codeforces.com/problemset/problem/1092/A
+//  Problem tags :  implementation    *800
 //  Date : 13/01/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
@@ -59,18 +59,18 @@ signed main()
     FOR_EACH_TESTCASE
     {
         int n;sn(n)
-        int t;sn(t)
+        int k,c=0;sn(k)
+        char x = 'a';
         fo(i,0,n)
         {
-            char x = 'a';
-            fo(j,0,k)
-            {
-
+                
                 cout << x;
-            }
-
+                x++;
+                c++;
+                if(c==k) {c=0;x='a';}
+            
         }
-        
+         cout << '\n';
     }
 
 }

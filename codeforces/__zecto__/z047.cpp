@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/problemset/problem/1092/B
+//  Problem tags : sortings    *700
+//  Date : 13/01/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
