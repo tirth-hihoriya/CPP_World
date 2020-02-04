@@ -51,55 +51,25 @@
 
 using namespace std;
 
-
-
 signed main()
 {
     XLR8
     FOR_EACH_TESTCASE
     {
+        int sum=0;
         int n;sn(n)
-        vi a(3);
-
-        int c=0;
-        a[0]=1;
-        int i=2;
-        // int pro=1;
-    
-        while(n>0 && c!=2 && sqrt(n)>=i){
-            // while(!isPrime(++i))
-            // {
-            // }
-
-            
-            if(n%i==0 && n>0)
-            {
-                n/=i;
-                a[c++]=i;
-                // pro=pro*i;
-            }
-            i++;
-            
-
-        }
-        if(n>a[c-1]) a[c++]=n;
-        if(c==3)
+        int d,r;
+         if((n/10)==0) sum+=n;
+        while(n/10)
         {
-            pwel("YES")
-            
-            cout << a[0];
-            cout << ' ';
-            cout << a[1];
-            cout << ' ';
-            cout << a[2] << endl;
-
+            d=n/10;
+            r=n%10;
+            sum+=d*10;
+            n=d+r;
+            if((n/10)==0) sum+=n;
         }
-        else
-        {
-            pwel("NO")
-        
-        }
-        
+         
+        pwel(sum)
            
     }
 

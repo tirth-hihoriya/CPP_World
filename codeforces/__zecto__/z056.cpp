@@ -1,4 +1,4 @@
-
+// not completed
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>
@@ -51,56 +51,54 @@
 
 using namespace std;
 
-
-
 signed main()
 {
     XLR8
     FOR_EACH_TESTCASE
     {
         int n;sn(n)
-        vi a(3);
+        string s;
+        sn(s)
+        int dx,dy,l=0,r=0,u=0,d=0,cx=0,cy=0,st=0,et=0,x,fs,fe;
+        fo(i,0,n)
+        {
+            if(s[i]=='L') l++;
+            else if(s[i]=='U') u++;
+            else if(s[i]=='R') r++;
+            else d++;
+        }
+        dx=r-l;
+        dy=u-d;
+        int minn=INF,count=0;
+        bool flag=true,f2=true;
+        fo(i,0,n)
+        {
+            if(s[i]=='L') cx--;
+            else if(s[i]=='U') cy++;
+            else if(s[i]=='R') cx++;
+            else cy--;
 
-        int c=0;
-        a[0]=1;
-        int i=2;
-        // int pro=1;
-    
-        while(n>0 && c!=2 && sqrt(n)>=i){
-            // while(!isPrime(++i))
-            // {
-            // }
-
-            
-            if(n%i==0 && n>0)
+            if(dx==cx && dy==cy && flag)
             {
-                n/=i;
-                a[c++]=i;
-                // pro=pro*i;
+                count++;
+                st=i-et;
+                x=et;
+                if(st<minn)
+                    {minn=st;
+                    fs=x;fe=i;}
+                et=i;
             }
-            i++;
-            
+            // if(dx==cx && dy==cy && flag){ flag=false; st=i+1; f2=false;}
+            // else if(dx==cx && dy==cy && !flag){ e=i; f2=true;}
+            // else if(!f2) { e=i; }
 
-        }
-        if(n>a[c-1]) a[c++]=n;
-        if(c==3)
-        {
-            pwel("YES")
             
-            cout << a[0];
-            cout << ' ';
-            cout << a[1];
-            cout << ' ';
-            cout << a[2] << endl;
-
+            
+            
         }
-        else
-        {
-            pwel("NO")
-        
-        }
-        
-           
+       
+        if(dx!=0 && dy!=0 && ++fe==n) pwel(-1)
+        else cout << ++fs << " " << ++fe << '\n';
     }
 
 }

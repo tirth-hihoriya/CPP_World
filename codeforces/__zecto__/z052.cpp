@@ -1,3 +1,6 @@
+//  URL : 
+//  Problem tags : 
+//  Date : 
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -34,7 +37,6 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
-#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -51,56 +53,25 @@
 
 using namespace std;
 
-
-
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
-    {
-        int n;sn(n)
-        vi a(3);
-
+        string s;
         int c=0;
-        a[0]=1;
-        int i=2;
-        // int pro=1;
-    
-        while(n>0 && c!=2 && sqrt(n)>=i){
-            // while(!isPrime(++i))
-            // {
-            // }
+        sn(s);
+        int l=s.length();
 
-            
-            if(n%i==0 && n>0)
+        fo(i,0,l/2)
+        {
+            if(s[i]!=s[l-i-1])
             {
-                n/=i;
-                a[c++]=i;
-                // pro=pro*i;
+                c++;
             }
-            i++;
-            
-
+            if(c==2) {pwel("NO") return 0;}
         }
-        if(n>a[c-1]) a[c++]=n;
-        if(c==3)
-        {
-            pwel("YES")
-            
-            cout << a[0];
-            cout << ' ';
-            cout << a[1];
-            cout << ' ';
-            cout << a[2] << endl;
-
-        }
-        else
-        {
-            pwel("NO")
-        
-        }
-        
-           
-    }
+    if(l%2==1 && c==0) pwel("YES")
+    else if(c==1 || l==1) pwel("YES")
+    else pwel("NO")
 
 }
+
