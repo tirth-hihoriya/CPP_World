@@ -1,6 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -37,6 +34,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -58,9 +56,33 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
-
         
+        int n;sn(n)
+        vi v(n);
+       
+        fo(i,0,n)
+        {
+            sn(v[i])
+        }
+        fo(i,0,n-2)
+        {
+            fo(j,i+1,n-1)
+            {
+                fo(k,j+1,n)
+                {
+                    if(v[k]==v[i])
+                    {
+                        pwel("YES")
+                        goto jump;
+                    }
+                }
+            }
+        }
+        pwel("NO")
+        jump:
+        continue;
+
+
     }
 
 }
-

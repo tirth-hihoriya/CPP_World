@@ -1,5 +1,6 @@
-//  URL : 
-//  Problem tags : 
+// not completed
+//  URL : https://codeforces.com/contest/1313/problem/A
+//  Problem tags : brute force    greedy    implementation    *900
 //  Date : 
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
@@ -58,6 +59,19 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int a,b,c;sn(a)sn(b)sn(c)
+        int x = min(a,b,c);
+        int z = max(a,b,c);
+        int y = (a+b+c)-(x+z);
+        int r;
+
+        if(z==0) r=0;
+        else if(x==0 && y==0 && z>=1) r=1;
+        else if(x==0 && y==1 && z>=1) r=2;
+        else if(x==0 && y>1 && z>1) r=3;
+        else if(x==1 && y>1 && z>1) r=4;
+        else if(x>3 && y>3 && z>3) r=7;
+        else if(x==3 && (y==3 && z==3) || (y==3 && z==))
 
         
     }

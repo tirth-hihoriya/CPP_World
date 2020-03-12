@@ -1,4 +1,4 @@
-//  URL : 
+//  URL : https://codeforces.com/contest/1296/problem/D
 //  Problem tags : 
 //  Date : 
 
@@ -56,11 +56,27 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
+    int n,a,b,k;sn(n)sn(a)sn(b)sn(k)
+    vi v(n);
+    fo(i,0,n)
     {
+        sn(v[i])
+        v[i] = (v[i]-((v[i]-1)/(a+b)-a-1))+1;
 
-        
     }
+    sort(v.begin(),v.end());
+    int pt=0;
+    fo(i,0,n)
+    {
+        k-=v[i];
+        pt++;
+        if(k<=0)
+        {
+            break;
+        }
+
+    }
+    pwel(pt)
 
 }
 
