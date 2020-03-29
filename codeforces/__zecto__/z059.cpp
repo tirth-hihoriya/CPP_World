@@ -1,4 +1,4 @@
-
+//not completed
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>

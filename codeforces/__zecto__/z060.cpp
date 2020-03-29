@@ -1,6 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -29,7 +26,6 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
-#define PI   3.141592653589
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -38,6 +34,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -45,7 +42,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -54,14 +51,51 @@
 
 using namespace std;
 
+int findMax(set<int> my_set) 
+{ 
+  
+    // Get the maximum element 
+    int max_element; 
+    if (!my_set.empty()) 
+        max_element = *my_set.rbegin(); 
+  
+    // return the maximum element 
+    return max_element; 
+} 
+
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
+    int n;sn(n)
+    set<int> s;
+    vi v2(n);
+    fo(i,0,n)
     {
-
+    
+        sn(v2[i])
         
+
     }
+    int max=NINF,ind;
+
+    
+    fo(i,0,n){
+        if(v2[i]>max)
+        {max=v2[i];
+        ind=i;
+        
+        }
+    }
+    fo(i,0,n)
+    {
+        if(v2[i]==max)
+        {
+            s.insert(i);
+        }
+    }
+    if(s.size()==1)
+        pwel(ind+1)
+    else
+        pwel(-1)
 
 }
-

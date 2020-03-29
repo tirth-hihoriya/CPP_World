@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/problemset/problem/1321/A
+//  Problem tags :  greedy    *900
+//  Date : 27/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -29,7 +29,6 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
-#define PI   3.141592653589
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -45,7 +44,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -57,11 +56,38 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
-    {
 
+      int n,sa=0,sb=0;sn(n)
+      bool flag=0;
+      vi a(n),b(n);
+      fo(i,0,n)
+      {
+         sn(a[i])
+      }
+      fo(i,0,n)
+      {
+         sn(b[i])
+         if(a[i]!=b[i])
+         {
+             sa+=a[i];
+             sb+=b[i];
+             flag=1;
+         }
+      }
+      if(flag==0)
+      {
+          pwel(-1)
+      }
+      else if(sa==0)
+      {
+          pwel(-1)
+      }
+      else
+      {
+          pwel((sb/sa)+1)
+      }
         
-    }
+    
 
 }
 

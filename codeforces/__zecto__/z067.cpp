@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/problemset/problem/1326/B
+//  Problem tags :  implementation    math    *900
+//  Date : 27/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -29,7 +29,6 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
-#define PI   3.141592653589
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -45,7 +44,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -57,11 +56,41 @@ using namespace std;
 signed main()
 {
     XLR8
-    FOR_EACH_TESTCASE
-    {
 
+      int n,sum=0;sn(n)
+      vi v(n);
+      fo(i,0,n)
+      {
+          sn(v[i])
+          
+          if(i!=n-1)
+          { 
+              if(v[i]<0)
+              {
+                  cout<<sum+v[i]<<" ";
+              }
+              else
+              {
+                 sum+=v[i];
+                 cout<<sum<<" ";
+              }
+            
+          }
+          else
+          {
+              if(v[i]<0)
+              {
+                  cout<<sum+v[i]<<'\n';
+              }
+              else
+              {
+                 sum+=v[i];
+                 cout<<sum<<'\n';
+              }
+          }
+      }
         
-    }
+    
 
 }
 

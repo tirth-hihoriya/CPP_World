@@ -1,6 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -29,7 +26,6 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
-#define PI   3.141592653589
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -38,6 +34,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -45,7 +42,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long>
+#define si set<long long, long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
@@ -59,9 +56,38 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int n;sn(n)
+    si s;
+    vi v(n);
+    fo(i,0,n)
+    {
+        sn(v[i])
+        s.insert();
 
-        
+    }
+    sort(v.begin(), v.end()); 
+    int c=0;
+
+    mii f;
+    
+	for (int const &i: v)
+		f[i]++;
+
+    // for(int i:f)
+    // {
+        pwel(f[2])
+
+    // }
+    // fo(i,0,n)
+    // {
+    //     fo(j,i+1,n)
+    //     {
+    //         if(v[j]%v[i]==0)
+    //             c++;
+    //     }
+    // }                                               
+    // pwel(c)
+           
     }
 
 }
-

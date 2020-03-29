@@ -26,6 +26,7 @@
 
 #define XLR8 ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define MOD 1000000007
+#define PI   3.141592653589
 #define int long long
 #define INF LLONG_MAX
 #define NINF LLONG_MIN
@@ -42,7 +43,7 @@
 #define vpii vector<pair<long long, long long> >
 #define mii map<long long, long long>
 #define pii pair<long long, long long>
-#define si set<long long, long long>
+#define si set<long long>
 #define qi queue<long long>
 #define pb push_back
 #define pf push_front
