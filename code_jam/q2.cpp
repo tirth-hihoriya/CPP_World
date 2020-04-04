@@ -1,8 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
-
-//******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>
 #include <fstream>
@@ -15,6 +10,7 @@
 #include <map>
 #include <stack>
 #include <queue>
+
 #include <stdexcept>
 #include <cstddef>
 #include <cstdio>
@@ -37,6 +33,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -55,12 +52,27 @@ using namespace std;
 
 signed main()
 {
-    XLR8
-    FOR_EACH_TESTCASE
-    {
+    int t;sn(t)
 
-        
+    
+    fo(i,0,t)
+    {
+        string s,res;
+        sn(s)
+        int len = s.length();
+        bool flag=false;
+        fo(i,0,len)
+        {
+            if(s[i]=='1' && flag==false) {res.push_back('(');res.push_back('1'); flag=true;}
+            else if((s[i]=='1' && flag==true)) res.push_back('1');
+            else if(s[i]=='0' && flag==true) {res.push_back(')');res.push_back('0'); flag=false;}
+            else if((s[i]=='0' && flag==false)) res.push_back('0');
+            if(i==len-1 && flag==true) res.push_back(')');
+        }
+
+
+
+        pwel("Case #"<<(i+1)<<": "<<res)           
     }
 
 }
-

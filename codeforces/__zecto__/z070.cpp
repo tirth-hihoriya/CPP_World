@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/problemset/problem/1316/A
+//  Problem tags :  implementation    *700
+//  Date : 29/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -22,7 +22,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
-// #include <windows.h>  // Sleep()
+#include <windows.h>  // Sleep()
 
 // #include <bits/stdc++.h>
 
@@ -58,6 +58,19 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int n,m,sum=0;sn(n)sn(m)
+        vi v(n);
+        fo(i,0,n)
+        {
+            sn(v[i])
+            if(i!=0)
+            {
+                sum+=v[i];
+            }
+        }
+        int x=m-v[0];
+        if(x<=sum) pwel(m)
+        else pwel(sum+v[0])
 
         
     }

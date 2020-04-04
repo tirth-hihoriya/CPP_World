@@ -1,8 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
-
-//******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>
 #include <fstream>
@@ -15,6 +10,7 @@
 #include <map>
 #include <stack>
 #include <queue>
+
 #include <stdexcept>
 #include <cstddef>
 #include <cstdio>
@@ -37,6 +33,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -55,12 +52,57 @@ using namespace std;
 
 signed main()
 {
-    XLR8
-    FOR_EACH_TESTCASE
+    int t;sn(t)
+    fo(i,0,t)
     {
+        int n,k=0,r=0,c=0;sn(n)
+
+        vi2d v v2d(n,n)
+
+        vi2d row v2d(n,n)
+        vi2d col v2d(n,n)
+        
+
+
+        fo(i,0,n)
+        {
+            fo(j,0,n)
+            {
+                sn(v[i][j])
+                // pwel(v[i][j])
+                if(i==j)
+                    k+=v[i][j];
+
+                row[i][v[i][j]-1]++;
+                col[j][v[i][j]-1]++;
+            }
+        }
+
+        bool fr=false,fc=false;
+
+        fo(i,0,n)
+        {
+            fo(j,0,n)
+            {
+             if(row[i][j]>=2) {r++;break;}
+            }
+        }
+
+        fo(i,0,n)
+        { 
+            fo(j,0,n)
+            {   
+             if(col[i][j]>=2) {c++;break;}   
+            }
+            
+        }
+
 
         
+           
+
+
+        pwel("Case #"<<(i+1)<<": "<<k<<" "<<r<<" "<<c)           
     }
 
 }
-

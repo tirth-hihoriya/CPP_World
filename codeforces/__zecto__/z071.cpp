@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/problemset/problem/1263/A
+//  Problem tags :   math    *1200
+//  Date : 29/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -22,7 +22,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
-// #include <windows.h>  // Sleep()
+#include <windows.h>  // Sleep()
 
 // #include <bits/stdc++.h>
 
@@ -58,7 +58,15 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int a,b,c,count=0;sn(a)sn(b)sn(c)
+        int x =max(max(a,b),c);
+        int z =min(min(a,b),c);
+        int y = (a+b+c)-(x+z);
 
+        if(x>=(y+z)) pwel(y+z)
+        else{
+               pwel((x+y+z)/2)
+        }        
         
     }
 

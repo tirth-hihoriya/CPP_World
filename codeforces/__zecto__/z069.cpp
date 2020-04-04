@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+//  URL : https://codeforces.com/contest/1328/problem/B
+//  Problem tags :  binary search    brute force    combinatorics    implementation    math    *1300
+//  Date : 29/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -15,6 +15,7 @@
 #include <map>
 #include <stack>
 #include <queue>
+
 #include <stdexcept>
 #include <cstddef>
 #include <cstdio>
@@ -22,7 +23,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
-// #include <windows.h>  // Sleep()
+#include <windows.h>  // Sleep()
 
 // #include <bits/stdc++.h>
 
@@ -58,7 +59,20 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
-
+        int n,k;sn(n)sn(k)
+        string s(n,'a');
+        rfo(i,n-2,0)
+        {
+            int x = n-i-1;
+            if(k<=x)
+            {
+                s[i]='b';
+                s[n-k]='b';
+                pwel(s)
+                break;
+            }
+            k-=n-i-1;
+        }
         
     }
 

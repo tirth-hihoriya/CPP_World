@@ -1,8 +1,3 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
-
-//******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
 #include <iostream>
 #include <fstream>
@@ -15,6 +10,7 @@
 #include <map>
 #include <stack>
 #include <queue>
+
 #include <stdexcept>
 #include <cstddef>
 #include <cstdio>
@@ -37,6 +33,7 @@
 #define rfo(i, a, b) for(int i=a;i>=b;i--)
 #define GCD(a, b) __gcd(a,b)
 #define sn(n) cin >> n;
+#define endl '\n'
 #define pwel(n) cout << n << endl;
 #define vi vector<int>
 #define vi2d vector<vector<int>>
@@ -53,14 +50,57 @@
 
 using namespace std;
 
+
 signed main()
 {
-    XLR8
-    FOR_EACH_TESTCASE
+    int t;sn(t)
+    fo(i,0,t)
     {
+        int n;sn(n)
+        vector< pair <pair<int,int>,int >> v; 
+
+        vector<pair<int,char>> r;
+
+        bool possi = true;
+        int conf = 0;
+
+        fo(i,0,n)
+        {
+            int a,b;sn(a)sn(b)
+            v.push_back(make_pair(make_pair(a,b),i));
+        }
+        sort(v.begin(), v.end());
+     
+        
+        int cc=0,jj=0;
+        
+        char last='C';
+
+        fo(i,0,n){
+
+            if(v[i].first.first>=cc)  {r.push_back(make_pair(v[i].second,'C')); cc=v[i].first.second;}
+            else if(v[i].first.first>=jj)  {r.push_back(make_pair(v[i].second,'J')); jj=v[i].first.second;}
+            else {possi=false; break;}
+
+        }
+
+
+
+        if(possi == false)
+            {pwel("Case #"<<(i+1)<<": IMPOSSIBLE")   }  
+        else
+        {
+            sort(r.begin(),r.end());
+            cout<<"Case #"<<(i+1)<<": ";
+            fo(j,0,n)
+            {
+                cout<<r[j].second;
+            }        
+            cout<<'\n';
+        }
+        
 
         
     }
 
 }
-

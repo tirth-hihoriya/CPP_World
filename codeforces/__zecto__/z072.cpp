@@ -1,6 +1,6 @@
-//  URL : 
-//  Problem tags : 
-//  Date : 
+ //  URL : https://codeforces.com/problemset/problem/1263/B
+//  Problem tags :    greedy    implementation    *1400
+//  Date : 29/03/2020
 
 //******************************  JUST SEE THE APROACH & IF U HAVE BETTER SOLUTION THEN SEND MESSAGE  ********************************
 
@@ -22,7 +22,7 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
-// #include <windows.h>  // Sleep()
+#include <windows.h>  // Sleep()
 
 // #include <bits/stdc++.h>
 
@@ -58,7 +58,45 @@ signed main()
     XLR8
     FOR_EACH_TESTCASE
     {
+        int n,count=0;sn(n)
 
+		map<string,int>m;
+		vector<string>v(n);
+
+		fo(i,0,n)
+		{
+			sn(v[i])
+			m[v[i]]++;	
+		}
+
+     	fo(i,0,n)
+		{
+			if(m[v[i]]>=2)
+			{	
+				count++;
+                // pwel("------------------------>"<<m[v[i]]<<"  "<<i)
+				m[v[i]]--;
+                // pwel("------------------------>"<<m[v[i]]<<"  "<<i)
+				while(m[v[i]]!=0)
+				{
+                    // pwel("------->"<<m[v[i]]<<"  "<<i)
+					if(v[i][0]=='9')
+						v[i][0]='0';
+					else
+						v[i][0]++;
+
+                    // pwel("------->"<<m[v[i]]<<"  "<<i)
+				}
+                // pwel("----xxxxxxx--->"<<m[v[i]]<<"  "<<i)
+				m[v[i]]++;
+                // pwel("---xxxxxxxx---->"<<m[v[i]]<<"  "<<i)
+			}
+		}
+		cout<<count<<endl;
+		for(int i=0;i<n;i++)
+		{
+			cout<<v[i]<<endl;
+		}
         
     }
 
